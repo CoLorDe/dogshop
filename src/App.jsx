@@ -84,7 +84,7 @@ function App(props) {
           </header>
           <main className={classes.content}>
             <Switch>
-              <Route exact path="/dogshop">
+              <Route exact path="/">
                 <Home />
               </Route>
             </Switch>

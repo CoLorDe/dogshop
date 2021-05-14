@@ -1,25 +1,35 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://world.openfoodfacts.org/'
+const BASE_URL = 'https://world.openfoodfacts.org'
 
 const fetchCategories = () => {
-  return axios.get(´$(BASE_URL)/categories.json´)
+  return axios.get(`${BASE_URL}/categories.json`)
     .then(res => {
-      console.log(res.tags.slice(0,10))
+      return res.data.tags.slice(0,10)
     })
     .catch(err => {
       console.error(err)
     })
 }
 
-const fetchCategories = (id) => {
-  return axios.get(´$(BASE_URL)/api/v0/product/$(id)´)
+const fetchCategory = (id) => {
+  return axios.get(`${BASE_URL}/api/category/${category}v0/product/${id}`)
     .then(res => {
-      console.log(res.tags.slice(0,10))
+      return res.data
     })
     .catch(err => {
       console.error(err)
     })
 }
 
-export { fetchBreeds };
+const fetchProduct = (category) => {
+  return axios.get(`${BASE_URL}/api/v0/product/${id}`)
+    .then(res => {
+      return res.data
+    })
+    .catch(err => {
+      console.error(err)
+    })
+}
+
+export { fetchCategories, fetchCategory, fetchProduct };
