@@ -13,7 +13,7 @@ const fetchCategories = () => {
 }
 
 const fetchCategory = (id) => {
-  return axios.get(`${BASE_URL}/api/category/${category}v0/product/${id}`)
+  return axios.get(`${BASE_URL}/api/category/${category}`)
     .then(res => {
       return res.data
     })
