@@ -20,7 +20,7 @@ function ResponsiveDrawer(props) {
       <div className={props.classes.toolbar} />
       <Divider />
       <List>
-        {['Breed1', 'Breed9', 'Breed5', 'Breed4',].map((text, index) => (
+        {['Food1', 'Food9', 'Food5', 'Food4',].map((text, index) => (
           <ListItem button key={text}>
             <ListItemText primary={text} />
           </ListItem>
@@ -28,7 +28,7 @@ function ResponsiveDrawer(props) {
       </List>
       <Divider />
       <List>
-        {['Something', 'Thing', 'Spam'].map((text, index) => (
+        {['Something', 'Thing', 'Options'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemText primary={text} />
           </ListItem>
