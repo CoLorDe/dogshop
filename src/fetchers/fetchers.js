@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://world.openfoodfacts.org'
+const BASE_URL = 'https://pokeapi.co/api/v2/'
 
-const fetchCategories = () => {
-  return axios.get(`${BASE_URL}/categories.json`)
+const fetchPokemon = () => {
+  return axios.get(`${BASE_URL}/`)
     .then(res => {
       return res.data.tags.slice(0,10)
     })
@@ -12,24 +12,5 @@ const fetchCategories = () => {
     })
 }
 
-const fetchCategory = (id) => {
-  return axios.get(`${BASE_URL}/api/category/${category}`)
-    .then(res => {
-      return res.data
-    })
-    .catch(err => {
-      console.error(err)
-    })
-}
 
-const fetchProduct = (category) => {
-  return axios.get(`${BASE_URL}/api/v0/product/${id}`)
-    .then(res => {
-      return res.data
-    })
-    .catch(err => {
-      console.error(err)
-    })
-}
-
-export { fetchCategories, fetchCategory, fetchProduct };
+export { fetchPokemon };

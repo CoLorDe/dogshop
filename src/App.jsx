@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -51,7 +53,7 @@ function App(props) {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -60,6 +62,7 @@ function App(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
+    <RecoilRoot>
       <Router>
         <div className={classes.root}>
           <CssBaseline />
@@ -76,7 +79,7 @@ function App(props) {
                   <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" noWrap>
-                  DogShop
+                  Food
                 </Typography>
               </Toolbar>
             </AppBar>
@@ -91,6 +94,7 @@ function App(props) {
           </main>
         </div>
       </Router>
+    </RecoilRoot>
   );
 }
 
