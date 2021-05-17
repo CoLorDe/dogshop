@@ -21,7 +21,7 @@ function ResponsiveDrawer(props) {
       <div className={props.classes.toolbar} />
       <Divider />
       <List>
-        {['Food1', 'Food9', 'Food5', 'Food4',].map((text, index) => (
+        {['Gen1', 'Gen2', 'Gen3', 'Gen4',].map((text, index) => (
           <ListItem button key={text}>
             <ListItemText primary={text} />
           </ListItem>
